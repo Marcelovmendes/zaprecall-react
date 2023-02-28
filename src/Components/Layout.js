@@ -4,7 +4,7 @@ const Layout =() =>{
  
     return(
         <>
-        <div className="container-layout">
+        <div className="container-layout shadow">
         <div className="layout-logo">
             <img src={logo} alt=""/>
         </div>
