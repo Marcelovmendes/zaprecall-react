@@ -1,10 +1,12 @@
 import Game from "./Components/Game";
 import Layout from "./Components/Layout";
+import Globalsyle from "./css/GlobalStyle";
 function App() {
   return (
     <>
-    <Layout/>
-    <Game/>
+    <Globalsyle/>
+      <Layout />
+      <Game />
     </>
   );
 }
