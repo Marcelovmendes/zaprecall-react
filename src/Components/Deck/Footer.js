@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-const Results = (props) => {  
+const Footer = (props) => {  
   return (
     <>
-      <Result>
+      <Result data-test="footer">
         <h1>{`${props.cardsCompleted}/${props.allquestions} CONCLUIDOS`}</h1>
       </Result>
     </>
   );
 };
 
-export default Results;
+export default Footer;
 
 const Result = styled.div`
 bottom: 0;

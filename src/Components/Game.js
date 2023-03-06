@@ -2,7 +2,7 @@
   import Deck from "./Deck/Deck"
   import styled from 'styled-components';
   import cards from "../cards" 
-  import Results from "./Deck/Result";
+  import Footer from "./Deck/Footer";
 import { useState } from "react";
   const Game = () => {
    const [cardsCompleted, setCardsCOmpleted]= useState(0)
@@ -27,7 +27,7 @@ import { useState } from "react";
           handleCardsCompleted={handleCardsCompleted}
           
         />
-        <Results allquestions={allquestions} cardsCompleted={cardsCompleted}/>
+        <Footer allquestions={allquestions} cardsCompleted={cardsCompleted}/>
       </Container>
     );
   };

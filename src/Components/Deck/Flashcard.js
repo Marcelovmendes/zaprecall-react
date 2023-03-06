@@ -53,12 +53,25 @@ const FlashCard = (props) => {
             return seta_play
     }
     }
+    const renderDatatest = () =>{
+      switch(icon){
+        case 'green':
+        return "zap-icon"
+        case 'red':
+          return "no-icon"
+          case 'orange':
+            return "partial-icon"
+            default:
+              return "play-btn"
+      }
+
+    }
   return (
     <>
     <FlashCardContainer data-test="flashcard">
       <FrontCard displayFront={turnFrontCard} color={icon} textdecoration={textdecoration}>
         <span data-test="flashcard-text">{props.index}</span>
-        <img onClick={handleTurnCard} data-test="play-btn" src={selectedIcon()} alt="icon quest" />
+        <img data-test={renderDatatest()} onClick={handleTurnCard} src={selectedIcon()} alt="icon quest" />
       </FrontCard>
       <BackCard displayBack={turnBackCard}>
         <span data-test="flashcard-text">{props.answer}</span>
