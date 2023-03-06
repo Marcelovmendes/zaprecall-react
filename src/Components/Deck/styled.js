@@ -49,9 +49,7 @@ export const FrontCard = styled.div`
     font-size: 16px;
     line-height: 19px;
     margin-left: 15px;
-    text-decoration: ${props => props.resultaCard?'none':'line-through'};
-    
-  
+    text-decoration: ${props => props.textdecoration?'line-through':'none'};
   }
 `;
 export const BackCard = styled.div`

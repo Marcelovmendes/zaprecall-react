@@ -1,38 +1,44 @@
-import logo from "../assets/logo.png";
-import Deck from "./Deck/Deck"
-import styled from 'styled-components';
-import cards from "../cards" 
-import { useState } from "react";
-import Results from "./Deck/Result";
-const Game = () => {
-  const [color, setColor] = useState('black');
-  const [cardsCompleted, setCardsCompleted] = useState(0);
-  console.log(color)
+  import logo from "../assets/logo.png";
+  import Deck from "./Deck/Deck"
+  import styled from 'styled-components';
+  import cards from "../cards" 
+  import { useState } from "react";
+  import Results from "./Deck/Result";
+  const Game = () => {
+    const [color, setColor] = useState('black');
+    const [decksCompleted, setDecksCompleted] = useState([]);
 
-  const handleCardCompleted = (color) => {
-    setColor(color);
-    setCardsCompleted(cardsCompleted + 1);
+    const handleCardCompleted = (color,deckIndex) => {
+      if(decksCompleted.length === cards.length){
+        return
+      }
+      if (!decksCompleted.includes(deckIndex)) {
+        setColor(color);
+        console.log(color)
+        setDecksCompleted([...decksCompleted, deckIndex]);
+        console.log(decksCompleted)
+      }
+    };
+    let questions = cards
+    let allquestions = cards.length
+    return (
+      <Container>
+        <HeaderLogo>
+          <img src={logo} alt=""></img>
+          <LogoText>
+            <h3>ZapRecall</h3>
+          </LogoText>
+        </HeaderLogo>
+        <Deck
+          handleCardCompleted={handleCardCompleted}
+          color={color}     
+          questions={questions}
+        />
+        <Results CardsCompleted={decksCompleted.length} allquestions={allquestions}/>
+      </Container>
+    );
   };
-  let questions = cards
-  let allquestions = cards.length
-  return (
-    <Container>
-      <HeaderLogo>
-        <img src={logo} alt=""></img>
-        <LogoText>
-          <h3>ZapRecall</h3>
-        </LogoText>
-      </HeaderLogo>
-      <Deck
-        handleCardCompleted={handleCardCompleted}
-        color={color}      
-        questions={questions}
-      />
-       <Results CardsCompleted={cardsCompleted} allquestions={allquestions}/>
-    </Container>
-  );
-};
-export default Game;
+  export default Game;
 
 const Container = styled.div`
   height: 100%;

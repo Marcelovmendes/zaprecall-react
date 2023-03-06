@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-const Results = (props) => {
-  console.log(props.allquestions)
+const Results = (props) => {  
+  console.log(props.cardsCompleted)
 
   return (
     <>
       <Result>
-        <h1>{`${props.CardsCompleted}/${props.allquestions} CONCLUIDOS`}</h1>
+        <h1>{`${props.cardsCompleted}/${props.allquestions} CONCLUIDOS`}</h1>
       </Result>
     </>
   );
@@ -14,20 +14,20 @@ const Results = (props) => {
 export default Results;
 
 const Result = styled.div`
-  bottom: 0;
-  left: 0;
-  height: 70px;
-  width: 100%;
-  border-radius: 0px;
-  background-color: white;
-  filter: drop-shadow(0 -4 6 0 #000000 5%);
-  text-align: center;
-  position: fixed;
-  h1{
-  font-family: "Recursive";
-  font-weight: 400;
-  font-size: 18px;
-  color: #333333;
-  margin-top: 24px;  
-  }
+bottom: 0;
+left: 0;
+height: 70px;
+width: 100%;
+border-radius: 0px;
+background-color: white;
+filter: drop-shadow(0 -4 6 0 #000000 5%);
+text-align: center;
+position: fixed;
+h1{
+font-family: "Recursive";
+font-weight: 400;
+font-size: 18px;
+color: #333333;
+margin-top: 24px;  
+}
 `

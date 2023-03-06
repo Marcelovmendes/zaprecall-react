@@ -1,7 +1,7 @@
 import FlashCard from "../Deck/Flashcard";
-import Results from "./Result";
 import { ContainerCard } from "./styled";
 const Deck = (props) => {
+  
   return (
     <>
       <ContainerCard>
@@ -12,13 +12,12 @@ const Deck = (props) => {
               index={`Pergunta ${i + 1}`}
               question={q.question}
               answer={q.answer}
-              handleCardCompleted={props.handleCardCompleted}
+              handleCardCompleted={()=> props.handleCardCompleted(props.color)}
               color={props.color}
             />
           );
         })}
       </ContainerCard>
-      <Results CardsCompleted={props.CardsCompleted} />
     </>
   );
 };

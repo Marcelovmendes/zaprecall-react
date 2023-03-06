@@ -17,6 +17,7 @@ const FlashCard = (props) => {
   const [turnFrontCard, setTurnFrontCard] = useState(true);
   const [turnBackCard, setTurnBackCard] = useState(false);
   const [resultCard, setResultCard] = useState(false);
+  const [ textdecoration, setTextdecoration]= useState(false);
   const handleTurnCard = () => {
     setTurnFrontCard(false);
     setTurnBackCard(true);
@@ -32,12 +33,13 @@ const FlashCard = (props) => {
     setTurnFrontCard(true);
     setTurnBackCard(false)
     setResultCard(false);
-    props.handleCardCompleted(props.color);
+    props.handleCardCompleted(props.color,props.deckIndex);
+    setTextdecoration(true)
   };
   return (
     <>
     <FlashCardContainer>
-      <FrontCard displayFront={turnFrontCard}>
+      <FrontCard displayFront={turnFrontCard} textdecoration={textdecoration}>
         <span style={{ color: props.color }}>{props.index}</span>
         <img onClick={handleTurnCard} src={seta_play} alt="a" />
       </FrontCard>
