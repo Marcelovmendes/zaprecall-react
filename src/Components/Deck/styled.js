@@ -1,16 +1,19 @@
 import styled from "styled-components";
 export const ContainerCard = styled.div`
+  width: 100%;
+  height: 100%;
   margin-top: 60px;
-  margin-left: 40px;
+  margin-left: 20px;
 `;
-export const Card = styled.div`
+export const FlashCardContainer= styled.div`
   width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-
+  margin:6%;
+  margin-bottom: 40px;
   img {
     width: 20px;
     height: 23px;
@@ -46,6 +49,9 @@ export const FrontCard = styled.div`
     font-size: 16px;
     line-height: 19px;
     margin-left: 15px;
+    text-decoration: ${props => props.resultaCard?'none':'line-through'};
+    
+  
   }
 `;
 export const BackCard = styled.div`
@@ -55,7 +61,8 @@ export const BackCard = styled.div`
   display: ${props => props.displayBack? 'flex':'none'};
   flex-direction: row;
   justify-content: space-between;
-  background-color: white;
+  background-color: #FFFFD4;
+;
   img {
     margin-top: 100px;
   }
@@ -77,7 +84,8 @@ export const ResultCard = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
-  background-color: white;
+  background-color: #FFFFD4;
+;
     span {
     font-family: "Recursive";
     font-size: 18px;

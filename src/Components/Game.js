@@ -1,29 +1,20 @@
 import logo from "../assets/logo.png";
 import Deck from "./Deck/Deck"
-import Results from "./Result";
 import styled from 'styled-components';
+import cards from "../cards" 
 import { useState } from "react";
+import Results from "./Deck/Result";
 const Game = () => {
-  const [turnFrontCard, setTurnFrontCard] = useState(true);
-  const [turnBackCard, setTurnBackCard] = useState(false);
-  const [resultCard, setResultCard] = useState(false);
+  const [color, setColor] = useState('black');
+  const [cardsCompleted, setCardsCompleted] = useState(0);
+  console.log(color)
 
-  const handleTurnCard = () => {
-    setTurnFrontCard(false);
-    setTurnBackCard(true);
+  const handleCardCompleted = (color) => {
+    setColor(color);
+    setCardsCompleted(cardsCompleted + 1);
   };
-
-  const handleResultCard = () => {
-    setTurnFrontCard(false);
-    setTurnBackCard(false)
-    setResultCard(true);
-  };
-
-  const handleResetCards = () => {
-    setTurnFrontCard(true);
-    setTurnBackCard(false)
-    setResultCard(false);
-  };
+  let questions = cards
+  let allquestions = cards.length
   return (
     <Container>
       <HeaderLogo>
@@ -33,24 +24,22 @@ const Game = () => {
         </LogoText>
       </HeaderLogo>
       <Deck
-        turnFrontCard={turnFrontCard}
-        turnBackCard={turnBackCard}
-        handleTurnCard={handleTurnCard}
-        handleResultCard={handleResultCard}
-        resultCard={resultCard}
-        handleResetCards={handleResetCards}
+        handleCardCompleted={handleCardCompleted}
+        color={color}      
+        questions={questions}
       />
-      <Results />
+       <Results CardsCompleted={cardsCompleted} allquestions={allquestions}/>
     </Container>
   );
 };
 export default Game;
 
 const Container = styled.div`
-  height: 667px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 `
 const HeaderLogo= styled.div`
   height: 60px;

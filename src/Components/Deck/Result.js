@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-const Results = () => {
+const Results = (props) => {
+  console.log(props.allquestions)
+
   return (
     <>
       <Result>
-        <h1>0/4 CONCLUIDOS</h1>
+        <h1>{`${props.CardsCompleted}/${props.allquestions} CONCLUIDOS`}</h1>
       </Result>
     </>
   );
