@@ -1,18 +1,17 @@
 import logo from "../assets/logo.png";
 import styled from 'styled-components';
-
 const Layout = () => {
-    
+
   return (
     <>
-      <ContainterLayout>
+      <ContainterLayout >
         <LayoutLogo>
           <img src={logo} alt="" />
         </LayoutLogo>
         <LayoutName>
           <h1>ZapRecall</h1>
         </LayoutName>
-        <LayoutText>
+        <LayoutText >
           <h2>Iniciar Recall!</h2>
         </LayoutText>
       </ContainterLayout>

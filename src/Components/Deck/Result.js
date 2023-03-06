@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 const Results = (props) => {  
-  console.log(props.cardsCompleted)
-
   return (
     <>
       <Result>

@@ -5,14 +5,14 @@ export const ContainerCard = styled.div`
   margin-top: 60px;
   margin-left: 20px;
 `;
-export const FlashCardContainer= styled.div`
+export const FlashCardContainer = styled.div`
   width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  margin:6%;
+  margin: 6%;
   margin-bottom: 40px;
   img {
     width: 20px;
@@ -31,7 +31,7 @@ export const FlashCardContainer= styled.div`
 export const FrontCard = styled.div`
   height: 65px;
   width: 300px;
-  display:${props => props.displayFront? 'flex':'none'};
+  display:${(props) => (props.displayFront ? "flex" : "none")};
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -49,18 +49,31 @@ export const FrontCard = styled.div`
     font-size: 16px;
     line-height: 19px;
     margin-left: 15px;
-    text-decoration: ${props => props.textdecoration?'line-through':'none'};
-  }
+    text-decoration: ${(props) =>
+      props.textdecoration ? "line-through" : "none"};
+
+    color:${(props) => {
+      if (props.color === "red") {
+        return "#FF3030";
+      }
+      if (props.color === "green") {
+        return "#2FBE34";
+      }
+      if (props.color === "orange") {
+        return "#FF922E";
+      }
+    }}
+ };
+
 `;
 export const BackCard = styled.div`
   height: 131px;
   width: 299px;
   border-radius: 5px;
-  display: ${props => props.displayBack? 'flex':'none'};
+  display: ${(props) => (props.displayBack ? "flex" : "none")};
   flex-direction: row;
   justify-content: space-between;
-  background-color: #FFFFD4;
-;
+  background-color: #ffffd4;
   img {
     margin-top: 100px;
   }
@@ -78,13 +91,12 @@ export const BackCard = styled.div`
 export const ResultCard = styled.div`
   height: 131px;
   width: 300px;
-  display:${props => props.displayResult ? 'flex':'none'};
+  display: ${(props) => (props.displayResult ? "flex" : "none")};
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
-  background-color: #FFFFD4;
-;
-    span {
+  background-color: #ffffd4;
+  span {
     font-family: "Recursive";
     font-size: 18px;
     font-weight: 400;
@@ -102,8 +114,10 @@ export const ContainerOptions = styled.div`
   flex-direction: row;
   margin-left: 10px;
   margin-bottom: 10px;
-   h1,h2,h3 {
-    font-family: 'Recursive';
+  h1,
+  h2,
+  h3 {
+    font-family: "Recursive";
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -120,10 +134,10 @@ export const Red = styled.div`
   margin-left: 7.5px;
   border-radius: 5px;
   background-color: #ff3030;
-  h1{
-width: 65.04px;
-height: 37.17px;
-margin-left : 8.5px ;
+  h1 {
+    width: 65.04px;
+    height: 37.17px;
+    margin-left: 8.5px;
   }
 `;
 export const Orange = styled.div`
@@ -132,10 +146,10 @@ export const Orange = styled.div`
   margin-left: 7.5px;
   border-radius: 5px;
   background-color: #f3902c;
-  h2{
-width: 75.88px;
-height: 37.17px;
-margin-left: 4.5px;
+  h2 {
+    width: 75.88px;
+    height: 37.17px;
+    margin-left: 4.5px;
   }
 `;
 export const Green = styled.div`

@@ -12,8 +12,7 @@ const Deck = (props) => {
               index={`Pergunta ${i + 1}`}
               question={q.question}
               answer={q.answer}
-              handleCardCompleted={()=> props.handleCardCompleted(props.color)}
-              color={props.color}
+              handleCardsCompleted={props.handleCardsCompleted}
             />
           );
         })}

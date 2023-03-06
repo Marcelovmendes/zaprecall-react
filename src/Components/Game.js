@@ -2,23 +2,16 @@
   import Deck from "./Deck/Deck"
   import styled from 'styled-components';
   import cards from "../cards" 
-  import { useState } from "react";
   import Results from "./Deck/Result";
+import { useState } from "react";
   const Game = () => {
-    const [color, setColor] = useState('black');
-    const [decksCompleted, setDecksCompleted] = useState([]);
-
-    const handleCardCompleted = (color,deckIndex) => {
-      if(decksCompleted.length === cards.length){
-        return
-      }
-      if (!decksCompleted.includes(deckIndex)) {
-        setColor(color);
-        console.log(color)
-        setDecksCompleted([...decksCompleted, deckIndex]);
-        console.log(decksCompleted)
-      }
-    };
+   const [cardsCompleted, setCardsCOmpleted]= useState(0)
+   console.log(cardsCompleted)
+   console.log(cards.length)
+   const handleCardsCompleted =()=>{
+    if(cardsCompleted <= cards.length)
+    setCardsCOmpleted(cardsCompleted+1)
+   }
     let questions = cards
     let allquestions = cards.length
     return (
@@ -29,12 +22,12 @@
             <h3>ZapRecall</h3>
           </LogoText>
         </HeaderLogo>
-        <Deck
-          handleCardCompleted={handleCardCompleted}
-          color={color}     
+        <Deck   
           questions={questions}
+          handleCardsCompleted={handleCardsCompleted}
+          
         />
-        <Results CardsCompleted={decksCompleted.length} allquestions={allquestions}/>
+        <Results allquestions={allquestions} cardsCompleted={cardsCompleted}/>
       </Container>
     );
   };
